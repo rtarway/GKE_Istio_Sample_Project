@@ -1,7 +1,7 @@
 # MonetaGo_Assignment
 MonetaGo Assignment Private Repo
 
-# Cloud Engineer::Google - Technical Assignment - Solution
+# Cloud Engineer:Google - Technical Assignment - Solution
 
 ## Table of Contents
 1. Objective
@@ -63,6 +63,7 @@ Known issues
 
 ### prerequisite
 kubectl should be installed
+gcloud should be installed and `gcloud auth login` should be executed prior to running the scripts
 
 
 After creating cluster
