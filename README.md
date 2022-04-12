@@ -68,6 +68,11 @@ Cleanup
 
 known issues
 
+./SetUpIstio.sh installs Istio but does not check status of istioctl download or istioctl install -y
+./deployBookInfoWithIstioSideCar does not check if all pods of bookinfo has sidecar and is in running state before exiting
+./deployIstioGatewayForBookInfo.sh uses a gateway with hosts as *, it can be improved to use a specific hostname.
+
+
 
 ## Allowed Materials
 * Google Cloud project
