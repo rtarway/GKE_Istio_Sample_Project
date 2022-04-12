@@ -71,6 +71,12 @@ After creating cluster
 1. run ./SetUpIstio.sh to download Istion 1.13.2 and install using istioctl with default profile
 2. run ./deployBookInfoWithIstioSideCar.sh to install bookinfo sample application in namespace 'bookinfoapp' with Istio side car injection enabled
 3. run ./deployIstioGatewayForBookInfo.sh to deploy a custom ingress gateway; Navigate to gateway URL to visit the application. Kiali dashboard is also enabled by this script. 
+4. run ./depoyReviewsVirtualService.sh to deploy reviews as a virtual service with subset v1, v2, v3 having a traffic distribution of 60,20,20 respectively.
+5. to test the traffic distribution , run following command, with GATEWAY_URL replaced or exported.
+6.    for i in $(seq 1 1000); do curl -s -o /dev/null "http://$GATEWAY_URL/productpage"; done
+7.    Sample traffic distribution in testing
+8.    ![image](https://user-images.githubusercontent.com/9452704/163036826-31750ee5-ad23-47a8-96d1-a742e499e94f.png)
+
 
 Cleanup
 1. ./cleanUpDeployment.sh removes bookinfo application and gateway
