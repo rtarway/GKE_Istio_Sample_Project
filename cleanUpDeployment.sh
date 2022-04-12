@@ -16,4 +16,4 @@ kubectl delete -f $ISTIO_HOME/samples/bookinfo/platform/kube/bookinfo.yaml
 
 kubectl config set-context --current --namespace=default
 kubectl label namespace $NAMESPACE istio-injection-
-kubectl delete -f $HOME/admin/namespace-bookinfoapp.json
+kubectl delete -f $PWD/admin/namespace-bookinfoapp.json
