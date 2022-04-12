@@ -5,6 +5,7 @@ export ZONE=us-central1-c
 export REGION=us-central1
 export ISTIO_HOME=$HOME/istio-1.13.2
 export PATH=$ISTIO_HOME/bin:$PATH
+export NAMESPACE=bookinfoapp
 
 #setup gcloud
 #gcloud auth activate-service-account --key-file $KEY_FILE_PATH
@@ -14,11 +15,11 @@ gcloud container clusters get-credentials $GKE_CLUSTER_NAME --zone $ZONE --proje
 #create namespace for application
 kubectl create -f $PWD/admin/namespace-bookinfoapp.json
 #enable namespace for side car injection
-kubectl label namespace bookinfoapp istio-injection=enabled
+kubectl label namespace $NAMESPACE istio-injection=enabled
 
 #Switch context to new namespace
 #kubens bookinfoapp
-kubectl config set-context --current --namespace=bookinfoapp
+kubectl config set-context --current --namespace=$NAMESPACE
 
 #add a script to modify the firewall rule to open port 15017 for gke master ingress.
 export firewall_rule_name=`gcloud compute firewall-rules list --filter="name~gke-$GKE_CLUSTER_NAME-[0-9a-z]*-master" --format=json|jq -r '.[0].name'`
