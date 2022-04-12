@@ -1,5 +1,5 @@
 #!/bin/bash
-source ./constants.sh
+source ./export_constants.sh
 
 gcloud container clusters get-credentials $GKE_CLUSTER_NAME --zone $ZONE --project $PROJECT_ID
 
