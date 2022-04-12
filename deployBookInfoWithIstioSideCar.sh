@@ -12,7 +12,7 @@ export PATH=$ISTIO_HOME/bin:$PATH
 gcloud container clusters get-credentials $GKE_CLUSTER_NAME --zone $ZONE --project $PROJECT_ID
 
 #create namespace for application
-kubectl create -f $HOME/admin/namespace-bookinfoapp.json
+kubectl create -f $PWD/admin/namespace-bookinfoapp.json
 #enable namespace for side car injection
 kubectl label namespace bookinfoapp istio-injection=enabled
 
