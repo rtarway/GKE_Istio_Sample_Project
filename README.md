@@ -1,7 +1,7 @@
 # MonetaGo_Assignment
 MonetaGo Assignment Private Repo
 
-# Cloud Engineer::Google - Technical Assignment - Solution
+# Cloud Engineer:Google - Technical Assignment - Solution
 
 ## Table of Contents
 1. Objective
@@ -23,6 +23,12 @@ Create a Google Kubernetes Engine(GKE) cluster + service mesh using allowed mate
     * Shielded nodes
 
 ## Solution for Specification 1
+
+### prerequisite
+
+terraform should be installed
+
+###
 I have used examples and modules from "github.com/gruntwork-io/terraform-google-gke.git//modules/gke-cluster" to create private cluster. 
 - I have modified examples\gke-private-cluster\main.tf to add "shielded node config" 
 - I have modified modules\gke-cluster\main.tf to add autoscaling for cluster
@@ -54,6 +60,11 @@ Known issues
 * App deployment into custom app namespace
 
 ## Solution for specification 2
+
+### prerequisite
+kubectl should be installed
+gcloud should be installed and `gcloud auth login` should be executed prior to running the scripts
+
 
 After creating cluster
  
