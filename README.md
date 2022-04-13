@@ -46,11 +46,6 @@ Instructions for creating GKE cluster
 5. run `terraform init`
 6. run `terraform apply` , enter 'yes' if plan looks ok.
 
-Known issues
-
-1. The master_authorized_networks_config is currently allowed from all ips "0.0.0.0/0" for easier testing. Private cluster should allow only projects vpc to connect to cluster. It can be achieved by creating a vm as bastio host in authorized network
-2. Service account for cluster has project editor role, which is too permissive. I kept it for easier testing. It can be improved further to restrict to specific needs.
-
 ## Specification 2
 * Istio service mesh
     * Default or minimal profile
@@ -82,6 +77,8 @@ Instructions
 
 ## Known Issues
 
-./setup_Istio.sh installs Istio but does not check status of `curl` or `istioctl install -y`
-./deploy_bookinfo_with_istio_sidecar.sh does not check if all pods of bookinfo has sidecar and is in running state before exiting. It simple waits for 10s and prints results of `kubectl get pods`
-./deploy_bookinfo_gateway.sh uses a gateway with hosts as *, it can be improved to use a specific hostname.
+1. The master_authorized_networks_config is currently allowed from all ips "0.0.0.0/0" for easier testing. Private cluster should allow only projects vpc to connect to cluster. It can be achieved by creating a vm as bastio host in authorized network
+2. Service account for cluster has project editor role, which is too permissive. I kept it for easier testing. It can be improved further to restrict to specific needs.
+3. ./setup_Istio.sh installs Istio but does not check status of `curl` or `istioctl install -y`
+4. ./deploy_bookinfo_with_istio_sidecar.sh does not check if all pods of bookinfo has sidecar and is in running state before exiting. It simple waits for 10s and prints results of `kubectl get pods`
+5. ./deploy_bookinfo_gateway.sh uses a gateway with hosts as *, it can be improved to use a specific hostname.
