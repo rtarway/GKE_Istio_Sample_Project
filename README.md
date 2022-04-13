@@ -62,11 +62,11 @@ Instructions
 
 0. Complete prerequisites and create gke cluster as per solution of specification. Navigate to root directory of repository. 
 1. Validate the variables in `./export_constants.sh` 
-2. run `./setup_Istio.sh` to download Istion 1.13.2 and install using istioctl with default profile
+2. run `./setup_Istio.sh` to download Istio 1.13.2 and install using istioctl with default profile
 3. run `./deploy_bookinfo_with_istio_sidecar.sh` to install bookinfo sample application in namespace 'bookinfoapp' with Istio side car injection enabled. You may need to run `kubectl get pods` to validate the status of running pods and avaialabiltiy as 2 pods for each deployment. 
 4. run `./deploy_bookinfo_gateway.sh` to deploy a custom ingress gateway. Navigate to gateway URL to visit the application. Kiali dashboard is also enabled by this script. run `istioctl dashboard kiali` in separate terminal to look at dashboard. This script also makes 100 calls to bookinfo application to populate the graph.
 5. run ./deploy_reviews_virtualservice.sh to deploy reviews as a virtual service with subset v1, v2, v3 having a traffic distribution of 60,20,20 respectively. To test the traffic distribution , run `for i in $(seq 1 1000); do curl -s -o /dev/null "http://$GATEWAY_URL/productpage"; done`, with GATEWAY_URL replaced or exported. 
-6. Sample traffic distribution in testing \n ![image](https://user-images.githubusercontent.com/9452704/163036826-31750ee5-ad23-47a8-96d1-a742e499e94f.png)
+6. Sample traffic distribution in testing  ![image](https://user-images.githubusercontent.com/9452704/163036826-31750ee5-ad23-47a8-96d1-a742e499e94f.png)
 
 
 ## Solution for Clean up
