@@ -1,15 +1,13 @@
 # Sample project for secure GKE w/ Istio using Terraform
 Sample project for secure GKE w/ Istio using Terraform
 
-# Cloud Engineer:Google - Technical Assignment - Solution
-
 ## Table of Contents
 1. Objective
 2. Specifications
 3. Allowed Materials
 
 ## Objective
-Create a Google Kubernetes Engine(GKE) cluster + service mesh using allowed materials. Develop the code resources in a structured and organized way, ensuring best practice with style and DRY principals. The code should be committed to your own private Git repository and then subsequently shared with MonetaGo engineers when requested.
+Create a Google Kubernetes Engine(GKE) cluster + service mesh using allowed materials. Develop the code resources in a structured and organized way, ensuring best practice with style and DRY principals. 
 
 ## Specifications
 
