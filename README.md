@@ -1,4 +1,4 @@
-# MonetaGo_Assignment
+# Sample project for secure GKE w/ Istio using Terraform
 Sample project for secure GKE w/ Istio using Terraform
 
 # Cloud Engineer:Google - Technical Assignment - Solution
