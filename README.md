@@ -1,5 +1,5 @@
 # MonetaGo_Assignment
-MonetaGo Assignment Private Repo
+Sample project for secure GKE w/ Istio using Terraform
 
 # Cloud Engineer:Google - Technical Assignment - Solution
 
